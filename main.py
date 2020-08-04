@@ -16,6 +16,9 @@ class Data(BaseModel):
 app = FastAPI()
 machine = Machine()
 
+@app.get('/')
+def read_root():
+    return {"message": "api-machine"}
 
 @app.post('/predict')
 def predict(data: Data):
